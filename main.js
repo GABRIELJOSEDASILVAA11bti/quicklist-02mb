@@ -1,4 +1,4 @@
-const items = []
+let items = []
 
 function addItem() {
 
@@ -55,6 +55,9 @@ items.map((item, index) => {
           `
 })
 
+
+localStorage.setItem("items, JSON.stringfy(items)")
+
 }
 
 
@@ -99,3 +102,19 @@ function addHideWarningClass() {
 document.querySelector(".warning").classList.add("hide-warning")
 
 }
+
+
+function verifylocalStorageItems() {
+
+    const localStorageItems = localStorage.getItem("items")
+
+
+    if (localStorageItems) {
+
+        items = JSON.parse(localStorageItems)
+        showItemList()
+    }
+}
+
+
+verifylocalStorageItems()
