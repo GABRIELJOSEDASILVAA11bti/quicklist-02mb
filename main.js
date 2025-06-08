@@ -4,6 +4,12 @@ function addItem() {
 
     const itemName = document.querySelector("#item").value
 
+
+    if (itemname === "") {
+
+     alert("não é possível adicionar um item em branco")  
+      return
+    }
    const item = {
 
     name: itemName,
